@@ -14,8 +14,8 @@ const NavContainer = styled.header`
 `;
 
 const LogoImg = styled.img`
-  height: 2em;
-  width: 6em;
+  height: 3em;
+  width: 8em;
   margin-left: 1em;
 `;
 
