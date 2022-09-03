@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import GraphsContainer from './GraphContainer';
 import TitleDashboard from './TitleDashboard';
 
 const MainDashboardContainer = styled.div`
@@ -17,6 +18,7 @@ function MainDashboard() {
   return (
     <MainDashboardContainer>
       <TitleDashboard />
+      <GraphsContainer />
     </MainDashboardContainer>
   );
 }
