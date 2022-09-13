@@ -54,10 +54,10 @@ function LeftBar() {
       <NavContainer>
         <NavBar>
           <IconContainer>
-            <Icon src={YogaIcon} />
-            <Icon src={SwimmingIcon} />
-            <Icon src={BikingIcon} />
-            <Icon src={LiftingIcon} />
+            <Icon src={YogaIcon} alt="Yoga Icon" />
+            <Icon src={SwimmingIcon} alt="Swimming Icon" />
+            <Icon src={BikingIcon} alt="Biking Icon" />
+            <Icon src={LiftingIcon} alt="Lifting Icon" />
           </IconContainer>
           <CopyrightText>Copyright SportSee 2022</CopyrightText>
         </NavBar>
