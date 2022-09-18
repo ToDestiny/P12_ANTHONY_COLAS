@@ -17,7 +17,7 @@ const Container = styled.div`
 
 const Left = styled.div`
   height: 100%;
-  width: 70%;
+  width: 80%;
   display: flex;
   flex-direction: column;
 `;
