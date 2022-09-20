@@ -1,17 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
-import colors from '../../utils/style/colors';
+import D3Sessions from '../D3Graphs/D3Sessions';
 
 const Container = styled.div`
   height: 100%;
   width: 30%;
   font-weight: 500;
-  background-color: ${colors.background};
+  background-color: #ff0000;
   border-radius: 10px;
 `;
 
 function GraphSession() {
-  return <Container></Container>;
+  return (
+    <Container>
+      <D3Sessions />
+    </Container>
+  );
 }
 
 export default GraphSession;

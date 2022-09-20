@@ -24,7 +24,6 @@ function D3Hexa() {
           dataKey="property"
           stroke="#FFFFFF"
           fontSize={14}
-          axisLine={false}
           tickLine={false}
         />
         <Radar
@@ -32,7 +31,6 @@ function D3Hexa() {
           stroke="#FF0000"
           fill="#FF0000"
           fillOpacity={0.8}
-          legendType="none"
         />
       </RadarChart>
     </ResponsiveContainer>
