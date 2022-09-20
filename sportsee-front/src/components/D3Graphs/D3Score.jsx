@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import * as d3 from 'd3';
 import styled from 'styled-components';
-import colors from '../../utils/style/colors';
 
 const Container = styled.div`
   height: 100%;
@@ -48,13 +47,44 @@ function D3Score() {
       .style('stroke-opacity', '0.0')
       .attr('fill', (d) => color(d.value));
 
+    // Title
     svg
       .append('text')
       .style('font-size', '18px')
       .text('Score')
       .attr('transform', 'translate(-120, -90)');
 
+    //setting up circle
+    svg
+      .append('circle')
+      .attr('cx', 0)
+      .attr('cy', 0)
+      .attr('r', '80px')
+      .style('fill', 'white');
+
     //setting up annotation
+    svg
+      .selectAll()
+      .data(formattedData)
+      .join('text')
+      .text(data[0].value)
+      .style('font-size', '24px')
+      .style('fill', '#282D30')
+      .attr('transform', 'translate(-10, -20)');
+
+    svg
+      .append('text')
+      .style('font-size', '18px')
+      .style('fill', '#74798C')
+      .text('de votre')
+      .attr('transform', 'translate(-30, 10)');
+
+    svg
+      .append('text')
+      .style('font-size', '18px')
+      .style('fill', '#74798C')
+      .text('objectif')
+      .attr('transform', 'translate(-25, 30)');
   }, [data]);
 
   return (
