@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import colors from '../../utils/style/colors';
+import D3Score from '../D3Graphs/D3Score';
 
 const Container = styled.div`
   height: 100%;
@@ -10,7 +11,11 @@ const Container = styled.div`
 `;
 
 function GraphScore() {
-  return <Container></Container>;
+  return (
+    <Container>
+      <D3Score />
+    </Container>
+  );
 }
 
 export default GraphScore;
