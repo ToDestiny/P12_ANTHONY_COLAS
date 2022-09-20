@@ -26,6 +26,7 @@ const GraphCalories = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: left;
+  border-radius: 10px;
 `;
 
 const GraphProteines = styled.div`
@@ -36,6 +37,7 @@ const GraphProteines = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: left;
+  border-radius: 10px;
 `;
 
 const GraphGlucides = styled.div`
@@ -46,6 +48,7 @@ const GraphGlucides = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: left;
+  border-radius: 10px;
 `;
 
 const GraphLipides = styled.div`
@@ -56,6 +59,7 @@ const GraphLipides = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: left;
+  border-radius: 10px;
 `;
 
 const Icon = styled.img`

@@ -9,7 +9,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
+  border-radius: 10px;
   background-color: ${colors.background};
 `;
 

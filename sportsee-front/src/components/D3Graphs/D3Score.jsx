@@ -67,10 +67,10 @@ function D3Score() {
       .selectAll()
       .data(formattedData)
       .join('text')
-      .text(data[0].value)
+      .text(data[0].value + '%')
       .style('font-size', '24px')
       .style('fill', '#282D30')
-      .attr('transform', 'translate(-10, -20)');
+      .attr('transform', 'translate(-20, -20)');
 
     svg
       .append('text')

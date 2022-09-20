@@ -7,6 +7,7 @@ const Container = styled.div`
   width: 30%;
   font-weight: 500;
   background-color: ${colors.background};
+  border-radius: 10px;
 `;
 
 function GraphSession() {
