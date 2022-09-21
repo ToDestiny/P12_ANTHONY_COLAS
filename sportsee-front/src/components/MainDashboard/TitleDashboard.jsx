@@ -28,12 +28,12 @@ const TitleP = styled.p`
   color: ${colors.black};
 `;
 
-function TitleDashboard() {
+function TitleDashboard({ userName }) {
   return (
     <nav>
       <TitleContainer>
         <TitleH1>
-          Bonjour <strong>Thomas</strong>
+          Bonjour <strong>{userName}</strong>
         </TitleH1>
         <TitleP>Félicitation ! Vous avez explosé vos objectifs hier 👏</TitleP>
       </TitleContainer>

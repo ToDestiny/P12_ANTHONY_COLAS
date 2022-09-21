@@ -11,10 +11,10 @@ const Container = styled.div`
   border-radius: 10px;
 `;
 
-function GraphScore() {
+function GraphScore({ todayScore }) {
   return (
     <Container>
-      <D3Score />
+      <D3Score todayScore={todayScore} />
     </Container>
   );
 }

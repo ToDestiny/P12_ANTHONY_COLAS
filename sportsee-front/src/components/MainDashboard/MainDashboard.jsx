@@ -3,7 +3,12 @@ import styled from 'styled-components';
 import GraphsContainer from './GraphContainer';
 import TitleDashboard from './TitleDashboard';
 import Error from '../../pages/Error';
-import { fetchDataUser } from '../../api/api';
+import {
+  fetchDataUser,
+  fetchUserActivity,
+  fetchUserAverageSessions,
+  fetchUserPerformance,
+} from '../../api/api';
 
 const MainDashboardContainer = styled.div`
   position: absolute;
@@ -18,27 +23,46 @@ const MainDashboardContainer = styled.div`
 
 function MainDashboard() {
   const [data, setData] = useState([]);
+  const [userActivity, setUserActivity] = useState([]);
+  const [userAverageSessions, setUserAveragseSessions] = useState([]);
+  const [userPerformance, setUserPerformance] = useState([]);
+
   let error = false;
 
   useEffect(() => {
     fetchData();
+    fetchUserActivity();
+    fetchUserAverageSessions();
+    fetchUserPerformance();
   }, []);
 
   async function fetchData() {
     const user = await fetchDataUser();
     setData(user);
+    const userActivity = await fetchUserActivity();
+    setUserActivity(userActivity);
+    const userAverageSessions = await fetchUserAverageSessions();
+    setUserAveragseSessions(userAverageSessions);
+    const userPerformance = await fetchUserPerformance();
+    setUserPerformance(userPerformance);
   }
 
   console.log(data);
 
-  if (data?.id === undefined) error = true;
+  if (
+    data?.id ||
+    userActivity?.id ||
+    userAverageSessions?.id ||
+    userPerformance?.id === undefined
+  )
+    error = true;
 
   return error ? (
     <Error />
   ) : (
     <MainDashboardContainer>
-      <TitleDashboard />
-      <GraphsContainer />
+      <TitleDashboard userName={data.userInfos?.firstName} />
+      <GraphsContainer data={data} />
     </MainDashboardContainer>
   );
 }

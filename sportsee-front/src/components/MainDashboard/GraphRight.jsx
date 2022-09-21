@@ -87,34 +87,34 @@ const GraphP2 = styled.p`
   font-weight: 400;
 `;
 
-function GraphRight() {
+function GraphRight({ keyData }) {
   return (
     <Container>
       <GraphCalories>
         <Icon src={CaloriesIcon} alt="Calories Icon" />
         <GraphDiv>
-          <GraphP>1,930KCal</GraphP>
+          <GraphP>{keyData.calorieCount}KCal</GraphP>
           <GraphP2>Calories</GraphP2>
         </GraphDiv>
       </GraphCalories>
       <GraphProteines>
         <Icon src={ProteinesIcon} alt="Proteines Icon" />
         <GraphDiv>
-          <GraphP>155g</GraphP>
+          <GraphP>{keyData.proteinCount}g</GraphP>
           <GraphP2>Proteines</GraphP2>
         </GraphDiv>
       </GraphProteines>
       <GraphGlucides>
         <Icon src={GlucidesIcon} alt="Glucides Icon" />
         <GraphDiv>
-          <GraphP>290g</GraphP>
+          <GraphP>{keyData.carbohydrateCount}g</GraphP>
           <GraphP2>Glucides</GraphP2>
         </GraphDiv>
       </GraphGlucides>
       <GraphLipides>
         <Icon src={LipidesIcon} alt="Lipides Icon" />
         <GraphDiv>
-          <GraphP>50g</GraphP>
+          <GraphP>{keyData.lipidCount}</GraphP>
           <GraphP2>Lipides</GraphP2>
         </GraphDiv>
       </GraphLipides>
