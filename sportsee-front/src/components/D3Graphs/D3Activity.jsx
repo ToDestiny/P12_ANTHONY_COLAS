@@ -59,12 +59,6 @@ function D3Activity() {
         <BarChart width="50%" height="50%" data={data}>
           <CartesianGrid strokeDasharray="3 3" vertical={false} />
           <XAxis dataKey="day" tickLine={false} axisLine={false} />
-          <XAxis
-            dataKey="calorie"
-            type="number"
-            tickLine={false}
-            axisLine={false}
-          />
           <YAxis
             dataKey="weight"
             type="number"
@@ -73,7 +67,13 @@ function D3Activity() {
             axisLine={false}
             domain={['dataMin - 1', 'dataMax + 1']}
           />
-          <YAxis dataKey="calorie" type="number" orientation="left" />
+          <YAxis
+            dataKey="calorie"
+            type="number"
+            orientation="left"
+            yAxisId="calorie"
+            hidden="true"
+          />
           <Tooltip content={<CustomTooltip />} />
           <Bar
             dataKey="weight"
@@ -86,6 +86,7 @@ function D3Activity() {
             fill="#E60000"
             barSize={10}
             radius={[10, 10, 0, 0]}
+            yAxisId="calorie"
           />
         </BarChart>
       </ResponsiveContainer>
