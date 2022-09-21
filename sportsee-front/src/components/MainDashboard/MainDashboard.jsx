@@ -2,6 +2,7 @@ import { React, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import GraphsContainer from './GraphContainer';
 import TitleDashboard from './TitleDashboard';
+import Error from '../../pages/Error';
 import { fetchDataUser } from '../../api/api';
 
 const MainDashboardContainer = styled.div`
@@ -17,19 +18,22 @@ const MainDashboardContainer = styled.div`
 
 function MainDashboard() {
   const [data, setData] = useState([]);
+  let error = false;
 
   useEffect(() => {
     fetchData();
-  }, []);
+  });
 
   async function fetchData() {
     const user = await fetchDataUser();
     setData(user);
   }
 
-  console.log(data.id);
+  if (data?.id === undefined) error = true;
 
-  return (
+  return error ? (
+    <Error />
+  ) : (
     <MainDashboardContainer>
       <TitleDashboard />
       <GraphsContainer />
