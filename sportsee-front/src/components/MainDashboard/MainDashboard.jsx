@@ -22,12 +22,14 @@ function MainDashboard() {
 
   useEffect(() => {
     fetchData();
-  });
+  }, []);
 
   async function fetchData() {
     const user = await fetchDataUser();
     setData(user);
   }
+
+  console.log(data);
 
   if (data?.id === undefined) error = true;
 
