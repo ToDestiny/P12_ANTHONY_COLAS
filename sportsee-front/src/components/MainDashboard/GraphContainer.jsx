@@ -7,10 +7,10 @@ import GraphScore from './GraphScore';
 import GraphSession from './GraphSessions';
 
 const Container = styled.div`
-  height: 38em;
+  height: 50em;
   width: 100%;
   font-weight: 500;
-  margin: 4rem 0rem 8rem 4rem;
+  margin: 4rem 0rem 0rem 4rem;
   display: flex;
   flex-direction: row;
 `;
@@ -23,7 +23,7 @@ const Left = styled.div`
 `;
 
 const LeftBottom = styled.div`
-  height: 100%;
+  height: 40%;
   width: 100%;
   display: flex;
   flex-direction: row;

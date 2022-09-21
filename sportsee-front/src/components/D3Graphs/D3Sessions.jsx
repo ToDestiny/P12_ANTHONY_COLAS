@@ -13,6 +13,7 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
   background: transparent;
+  border-radius: 10px;
 `;
 
 const Title = styled.h2`
