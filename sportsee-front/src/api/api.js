@@ -1,4 +1,4 @@
-export async function fetchDataUser(id) {
+export async function fetchUserInfo(id) {
   try {
     let response = await fetch(`http://localhost:3000/user/${id}`);
     if (response.status === 200) {

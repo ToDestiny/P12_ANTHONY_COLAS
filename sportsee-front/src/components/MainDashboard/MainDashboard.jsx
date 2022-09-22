@@ -4,7 +4,7 @@ import GraphsContainer from './GraphContainer';
 import TitleDashboard from './TitleDashboard';
 import Error from '../../pages/Error';
 import {
-  fetchDataUser,
+  fetchUserInfo,
   fetchUserActivity,
   fetchUserAverageSessions,
   fetchUserPerformance,
@@ -27,19 +27,20 @@ function MainDashboard() {
   const [userActivity, setUserActivity] = useState([]);
   const [userAverageSessions, setUserAveragseSessions] = useState([]);
   const [userPerformance, setUserPerformance] = useState([]);
-  const [isDataLoading, setDataLoading] = useState(true);
+  const [isDataLoading, setDataLoading] = useState(false);
 
   let error = false;
   let { id } = useParams;
   if (id === undefined) id = 12;
 
   useEffect(() => {
+    setDataLoading(true);
     fetchData(id);
     setDataLoading(false);
   }, [id]);
 
   async function fetchData(id) {
-    const userInfo = await fetchDataUser(id);
+    const userInfo = await fetchUserInfo(id);
     setUserInfo(userInfo);
     const userActivity = await fetchUserActivity(id);
     setUserActivity(userActivity);
@@ -48,12 +49,18 @@ function MainDashboard() {
     const userPerformance = await fetchUserPerformance(id);
     setUserPerformance(userPerformance);
   }
-  if (userInfo?.id === undefined) error = true;
+  if (
+    userInfo?.id ||
+    userActivity?.userId ||
+    userAverageSessions?.userId ||
+    userPerformance?.userId === undefined
+  )
+    error = true;
   else error = false;
 
   if (isDataLoading) return <div>Loading ...</div>;
   else
-    return error ? (
+    return error && isDataLoading ? (
       <Error />
     ) : (
       <MainDashboardContainer>
