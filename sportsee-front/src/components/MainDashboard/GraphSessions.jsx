@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import D3Sessions from '../D3Graphs/D3Sessions';
+import D3Sessions from '../Charts/D3Sessions';
 
 const Container = styled.div`
   height: 100%;

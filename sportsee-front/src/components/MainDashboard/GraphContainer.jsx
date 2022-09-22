@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import GraphActivity from './GraphActivity';
-import GraphHexa from './GraphHexa';
-import GraphRight from './GraphRight';
+import GraphHexa from '../Charts/GraphHexa';
+import GraphRight from '../Charts/GraphRight';
 import GraphScore from './GraphScore';
 import GraphSession from './GraphSessions';
 

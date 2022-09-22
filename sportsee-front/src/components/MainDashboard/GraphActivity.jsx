@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import colors from '../../utils/style/colors';
-import D3Activity from '../D3Graphs/D3Activity';
+import D3Activity from '../Charts/D3Activity';
 
 const Container = styled.div`
   height: 60%;

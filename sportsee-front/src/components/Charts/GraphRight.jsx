@@ -103,7 +103,7 @@ function GraphRight() {
     setInfo(data);
   }
   if (info.length === 0) return <></>;
-  console.log(info.keyData.calorieCount);
+
   return (
     <Container>
       <GraphCalories>
