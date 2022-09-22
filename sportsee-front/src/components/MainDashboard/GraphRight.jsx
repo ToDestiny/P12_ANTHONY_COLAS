@@ -103,34 +103,34 @@ function GraphRight() {
     setInfo(data);
   }
   if (info.length === 0) return <></>;
-
+  console.log(info.keyData.calorieCount);
   return (
     <Container>
       <GraphCalories>
         <Icon src={CaloriesIcon} alt="Calories Icon" />
         <GraphDiv>
-          <GraphP>0KCal</GraphP>
+          <GraphP>{info.keyData.calorieCount}KCal</GraphP>
           <GraphP2>Calories</GraphP2>
         </GraphDiv>
       </GraphCalories>
       <GraphProteines>
         <Icon src={ProteinesIcon} alt="Proteines Icon" />
         <GraphDiv>
-          <GraphP>0g</GraphP>
+          <GraphP>{info.keyData.proteinCount}g</GraphP>
           <GraphP2>Proteines</GraphP2>
         </GraphDiv>
       </GraphProteines>
       <GraphGlucides>
         <Icon src={GlucidesIcon} alt="Glucides Icon" />
         <GraphDiv>
-          <GraphP>0g</GraphP>
+          <GraphP>{info.keyData.carbohydrateCount}g</GraphP>
           <GraphP2>Glucides</GraphP2>
         </GraphDiv>
       </GraphGlucides>
       <GraphLipides>
         <Icon src={LipidesIcon} alt="Lipides Icon" />
         <GraphDiv>
-          <GraphP>0</GraphP>
+          <GraphP>{info.keyData.lipidCount}g</GraphP>
           <GraphP2>Lipides</GraphP2>
         </GraphDiv>
       </GraphLipides>
