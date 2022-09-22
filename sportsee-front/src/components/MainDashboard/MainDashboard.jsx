@@ -27,20 +27,18 @@ function MainDashboard() {
   const [userActivity, setUserActivity] = useState([]);
   const [userAverageSessions, setUserAveragseSessions] = useState([]);
   const [userPerformance, setUserPerformance] = useState([]);
-  const [isDataLoading, setDataLoading] = useState(false);
+  const [isDataLoading, setDataLoading] = useState(true);
 
   let error = false;
   let { id } = useParams;
   if (id === undefined) id = 12;
 
   useEffect(() => {
-    setDataLoading(true);
     fetchData(id);
     setDataLoading(false);
   }, [id]);
 
   async function fetchData(id) {
-    if (!id) id = 12;
     const userInfo = await fetchDataUser(id);
     setUserInfo(userInfo);
     const userActivity = await fetchUserActivity(id);
@@ -50,13 +48,7 @@ function MainDashboard() {
     const userPerformance = await fetchUserPerformance(id);
     setUserPerformance(userPerformance);
   }
-  if (
-    userInfo?.id ||
-    userActivity?.userId ||
-    userAverageSessions?.userId ||
-    userPerformance?.userId === undefined
-  )
-    error = true;
+  if (userInfo?.id === undefined) error = true;
   else error = false;
 
   if (isDataLoading) return <div>Loading ...</div>;
