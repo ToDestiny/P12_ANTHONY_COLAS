@@ -6,7 +6,7 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 
-function D3Hexa({ userPerformance }) {
+function D3Hexa() {
   const data = [
     { property: 'Intensité', value: 2.5 },
     { property: 'Vitesse', value: 4.8 },
@@ -21,7 +21,7 @@ function D3Hexa({ userPerformance }) {
       <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
         <PolarGrid />
         <PolarAngleAxis
-          dataKey="property"
+          dataKey="kind"
           stroke="#FFFFFF"
           fontSize={14}
           tickLine={false}

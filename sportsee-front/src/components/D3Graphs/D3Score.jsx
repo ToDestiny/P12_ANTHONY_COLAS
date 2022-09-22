@@ -10,7 +10,7 @@ const Container = styled.div`
   justify-content: center;
 `;
 
-function D3Score({ todayScore }) {
+function D3Score() {
   const [data] = useState([
     { property: 'a', value: 12 },
     { property: 'b', value: 78 },

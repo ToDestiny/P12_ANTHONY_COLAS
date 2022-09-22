@@ -32,23 +32,18 @@ const LeftBottom = styled.div`
   justify-content: space-between;
 `;
 
-function GraphsContainer({
-  userInfo,
-  userActivity,
-  userAverageSessions,
-  userPerformance,
-}) {
+function GraphsContainer() {
   return (
     <Container>
       <Left>
-        <GraphActivity userActivity={userActivity} />
+        <GraphActivity />
         <LeftBottom>
-          <GraphSession userAverageSessions={userAverageSessions} />
-          <GraphHexa userPerformance={userPerformance} />
-          <GraphScore todayScore={userInfo.todayScore} />
+          <GraphSession />
+          <GraphHexa />
+          <GraphScore />
         </LeftBottom>
       </Left>
-      <GraphRight keyData={userInfo.keyData} />
+      <GraphRight />
     </Container>
   );
 }

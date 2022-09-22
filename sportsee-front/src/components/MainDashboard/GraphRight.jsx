@@ -1,6 +1,8 @@
-import React from 'react';
+import { React, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import colors from '../../utils/style/colors';
+import { fetchUserInfo } from '../../api/api';
+import { useParams } from 'react-router-dom';
 
 // Import Graph Icons
 import CaloriesIcon from '../../assets/icons/calories.svg';
@@ -87,34 +89,48 @@ const GraphP2 = styled.p`
   font-weight: 400;
 `;
 
-function GraphRight({ keyData }) {
+function GraphRight() {
+  let { id } = useParams;
+  if (id === undefined) id = 12;
+  const [info, setInfo] = useState([]);
+
+  useEffect(() => {
+    fetchData(id);
+  }, [id]);
+
+  async function fetchData(id) {
+    const data = await fetchUserInfo(id);
+    setInfo(data);
+  }
+  if (info.length === 0) return <></>;
+
   return (
     <Container>
       <GraphCalories>
         <Icon src={CaloriesIcon} alt="Calories Icon" />
         <GraphDiv>
-          <GraphP>{keyData.calorieCount}KCal</GraphP>
+          <GraphP>0KCal</GraphP>
           <GraphP2>Calories</GraphP2>
         </GraphDiv>
       </GraphCalories>
       <GraphProteines>
         <Icon src={ProteinesIcon} alt="Proteines Icon" />
         <GraphDiv>
-          <GraphP>{keyData.proteinCount}g</GraphP>
+          <GraphP>0g</GraphP>
           <GraphP2>Proteines</GraphP2>
         </GraphDiv>
       </GraphProteines>
       <GraphGlucides>
         <Icon src={GlucidesIcon} alt="Glucides Icon" />
         <GraphDiv>
-          <GraphP>{keyData.carbohydrateCount}g</GraphP>
+          <GraphP>0g</GraphP>
           <GraphP2>Glucides</GraphP2>
         </GraphDiv>
       </GraphGlucides>
       <GraphLipides>
         <Icon src={LipidesIcon} alt="Lipides Icon" />
         <GraphDiv>
-          <GraphP>{keyData.lipidCount}</GraphP>
+          <GraphP>0</GraphP>
           <GraphP2>Lipides</GraphP2>
         </GraphDiv>
       </GraphLipides>

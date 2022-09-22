@@ -3,12 +3,7 @@ import styled from 'styled-components';
 import GraphsContainer from './GraphContainer';
 import TitleDashboard from './TitleDashboard';
 import Error from '../../pages/Error';
-import {
-  fetchUserInfo,
-  fetchUserActivity,
-  fetchUserAverageSessions,
-  fetchUserPerformance,
-} from '../../api/api';
+import { fetchUserInfo } from '../../api/api';
 import { useParams } from 'react-router-dom';
 
 const MainDashboardContainer = styled.div`
@@ -24,9 +19,6 @@ const MainDashboardContainer = styled.div`
 
 function MainDashboard() {
   const [userInfo, setUserInfo] = useState([]);
-  const [userActivity, setUserActivity] = useState([]);
-  const [userAverageSessions, setUserAveragseSessions] = useState([]);
-  const [userPerformance, setUserPerformance] = useState([]);
   const [isDataLoading, setDataLoading] = useState(false);
 
   let error = false;
@@ -42,35 +34,18 @@ function MainDashboard() {
   async function fetchData(id) {
     const userInfo = await fetchUserInfo(id);
     setUserInfo(userInfo);
-    const userActivity = await fetchUserActivity(id);
-    setUserActivity(userActivity);
-    const userAverageSessions = await fetchUserAverageSessions(id);
-    setUserAveragseSessions(userAverageSessions);
-    const userPerformance = await fetchUserPerformance(id);
-    setUserPerformance(userPerformance);
   }
-  if (
-    userInfo?.id ||
-    userActivity?.userId ||
-    userAverageSessions?.userId ||
-    userPerformance?.userId === undefined
-  )
-    error = true;
+  if (userInfo?.id === undefined) error = true;
   else error = false;
 
   if (isDataLoading) return <div>Loading ...</div>;
   else
-    return error && isDataLoading ? (
+    return error ? (
       <Error />
     ) : (
       <MainDashboardContainer>
         <TitleDashboard userName={userInfo.userInfos?.firstName} />
-        <GraphsContainer
-          userInfo={userInfo}
-          userActivity={userActivity}
-          userAverageSessions={userAverageSessions}
-          userPerformance={userPerformance}
-        />
+        <GraphsContainer />
       </MainDashboardContainer>
     );
 }
