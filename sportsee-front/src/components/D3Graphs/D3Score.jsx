@@ -11,7 +11,6 @@ const Container = styled.div`
 `;
 
 function D3Score({ todayScore }) {
-  console.log(todayScore);
   const [data] = useState([
     { property: 'a', value: 12 },
     { property: 'b', value: 78 },

@@ -6,7 +6,7 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 
-function D3Hexa() {
+function D3Hexa({ userPerformance }) {
   const data = [
     { property: 'Intensité', value: 2.5 },
     { property: 'Vitesse', value: 4.8 },

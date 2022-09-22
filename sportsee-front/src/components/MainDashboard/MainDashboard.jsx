@@ -9,6 +9,7 @@ import {
   fetchUserAverageSessions,
   fetchUserPerformance,
 } from '../../api/api';
+import { useParams } from 'react-router-dom';
 
 const MainDashboardContainer = styled.div`
   position: absolute;
@@ -22,49 +23,57 @@ const MainDashboardContainer = styled.div`
 `;
 
 function MainDashboard() {
-  const [data, setData] = useState([]);
+  const [userInfo, setUserInfo] = useState([]);
   const [userActivity, setUserActivity] = useState([]);
   const [userAverageSessions, setUserAveragseSessions] = useState([]);
   const [userPerformance, setUserPerformance] = useState([]);
+  const [isDataLoading, setDataLoading] = useState(false);
 
   let error = false;
+  let { id } = useParams;
+  if (id === undefined) id = 12;
 
   useEffect(() => {
-    fetchData();
-    fetchUserActivity();
-    fetchUserAverageSessions();
-    fetchUserPerformance();
-  }, []);
+    setDataLoading(true);
+    fetchData(id);
+    setDataLoading(false);
+  }, [id]);
 
-  async function fetchData() {
-    const user = await fetchDataUser();
-    setData(user);
-    const userActivity = await fetchUserActivity();
+  async function fetchData(id) {
+    if (!id) id = 12;
+    const userInfo = await fetchDataUser(id);
+    setUserInfo(userInfo);
+    const userActivity = await fetchUserActivity(id);
     setUserActivity(userActivity);
-    const userAverageSessions = await fetchUserAverageSessions();
+    const userAverageSessions = await fetchUserAverageSessions(id);
     setUserAveragseSessions(userAverageSessions);
-    const userPerformance = await fetchUserPerformance();
+    const userPerformance = await fetchUserPerformance(id);
     setUserPerformance(userPerformance);
   }
-
-  console.log(data);
-
   if (
-    data?.id ||
-    userActivity?.id ||
-    userAverageSessions?.id ||
-    userPerformance?.id === undefined
+    userInfo?.id ||
+    userActivity?.userId ||
+    userAverageSessions?.userId ||
+    userPerformance?.userId === undefined
   )
     error = true;
+  else error = false;
 
-  return error ? (
-    <Error />
-  ) : (
-    <MainDashboardContainer>
-      <TitleDashboard userName={data.userInfos?.firstName} />
-      <GraphsContainer data={data} />
-    </MainDashboardContainer>
-  );
+  if (isDataLoading) return <div>Loading ...</div>;
+  else
+    return error ? (
+      <Error />
+    ) : (
+      <MainDashboardContainer>
+        <TitleDashboard userName={userInfo.userInfos?.firstName} />
+        <GraphsContainer
+          userInfo={userInfo}
+          userActivity={userActivity}
+          userAverageSessions={userAverageSessions}
+          userPerformance={userPerformance}
+        />
+      </MainDashboardContainer>
+    );
 }
 
 export default MainDashboard;

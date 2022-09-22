@@ -10,10 +10,10 @@ const Container = styled.div`
   border-radius: 10px;
 `;
 
-function GraphHexa() {
+function GraphHexa(userPerformance) {
   return (
     <Container>
-      <D3Hexa />
+      <D3Hexa userPerformance={userPerformance} />
     </Container>
   );
 }

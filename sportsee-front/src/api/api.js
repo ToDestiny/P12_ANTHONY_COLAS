@@ -1,6 +1,6 @@
-export async function fetchDataUser() {
+export async function fetchDataUser(id) {
   try {
-    let response = await fetch(`http://localhost:3000/user/12`);
+    let response = await fetch(`http://localhost:3000/user/${id}`);
     if (response.status === 200) {
       let data = await response.json();
       return data.data;
@@ -12,9 +12,9 @@ export async function fetchDataUser() {
   }
 }
 
-export async function fetchUserActivity() {
+export async function fetchUserActivity(id) {
   try {
-    let response = await fetch(`http://localhost:3000/user/12/activity`);
+    let response = await fetch(`http://localhost:3000/user/${id}/activity`);
     if (response.status === 200) {
       let data = await response.json();
       return data.data;
@@ -26,10 +26,10 @@ export async function fetchUserActivity() {
   }
 }
 
-export async function fetchUserAverageSessions() {
+export async function fetchUserAverageSessions(id) {
   try {
     let response = await fetch(
-      `http://localhost:3000/user/12/average-sessions`
+      `http://localhost:3000/user/${id}/average-sessions`
     );
     if (response.status === 200) {
       let data = await response.json();
@@ -42,9 +42,9 @@ export async function fetchUserAverageSessions() {
   }
 }
 
-export async function fetchUserPerformance() {
+export async function fetchUserPerformance(id) {
   try {
-    let response = await fetch(`http://localhost:3000/user/12/performance`);
+    let response = await fetch(`http://localhost:3000/user/${id}/performance`);
     if (response.status === 200) {
       let data = await response.json();
       return data.data;
