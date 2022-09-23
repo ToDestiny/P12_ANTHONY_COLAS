@@ -1,7 +1,9 @@
-import React from 'react';
+import { React, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import colors from '../../utils/style/colors';
 import D3Activity from './D3Activity';
+import { fetchUserActivity } from '../../api/api';
+import { useParams } from 'react-router-dom';
 
 const Container = styled.div`
   height: 60%;
@@ -65,6 +67,21 @@ const Top = styled.div`
 `;
 
 function GraphActivity() {
+  let { id } = useParams;
+  if (id === undefined) id = 12;
+  console.log(id);
+  const [activity, setActivity] = useState([]);
+
+  useEffect(() => {
+    fetchData(id);
+  }, [id]);
+
+  async function fetchData(id) {
+    const data = await fetchUserActivity(id);
+    setActivity(data);
+  }
+  if (activity.length === 0) return <></>;
+
   return (
     <Container>
       <Top>
@@ -80,7 +97,7 @@ function GraphActivity() {
           </P2>
         </Right>
       </Top>
-      <D3Activity />
+      <D3Activity activity={activity} />
     </Container>
   );
 }

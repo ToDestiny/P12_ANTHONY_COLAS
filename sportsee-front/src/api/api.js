@@ -17,7 +17,17 @@ export async function fetchUserActivity(id) {
     let response = await fetch(`http://localhost:3000/user/${id}/activity`);
     if (response.status === 200) {
       let data = await response.json();
-      return data.data;
+      let formattedDate = [];
+      let date;
+      data.data.sessions.forEach((session) => {
+        date = new Date(session.day);
+        formattedDate.push({
+          day: date.getDate(),
+          kilogram: session.kilogram,
+          calories: session.calories,
+        });
+      });
+      return formattedDate;
     } else {
       throw new Error();
     }

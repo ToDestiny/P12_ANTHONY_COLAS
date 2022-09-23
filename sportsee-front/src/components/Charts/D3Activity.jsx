@@ -23,20 +23,8 @@ const TooltipContainer = styled.div`
   color: #ffffff;
 `;
 
-function D3Activity() {
-  const data = [
-    { day: '1', weight: 68, calorie: 358 },
-    { day: '2', weight: 69, calorie: 300 },
-    { day: '3', weight: 70, calorie: 370 },
-    { day: '4', weight: 69, calorie: 290 },
-    { day: '5', weight: 68, calorie: 330 },
-    { day: '6', weight: 71, calorie: 360 },
-    { day: '7', weight: 70, calorie: 390 },
-    { day: '8', weight: 67, calorie: 250 },
-    { day: '9', weight: 68, calorie: 300 },
-    { day: '10', weight: 70, calorie: 390 },
-  ];
-
+function D3Activity(data) {
+  console.log(data);
   function CustomTooltip({ active, payload }) {
     if (active && payload && payload.length) {
       return (
@@ -56,11 +44,11 @@ function D3Activity() {
         height="100%"
         margin={{ top: 0, right: 0, left: 0, bottom: 0 }}
       >
-        <BarChart width="50%" height="50%" data={data}>
+        <BarChart width="50%" height="50%" data={data.activity}>
           <CartesianGrid strokeDasharray="3 3" vertical={false} />
           <XAxis dataKey="day" tickLine={false} axisLine={false} />
           <YAxis
-            dataKey="weight"
+            dataKey="kilogram"
             type="number"
             tickLine={false}
             orientation="right"
@@ -68,25 +56,25 @@ function D3Activity() {
             domain={['dataMin - 1', 'dataMax + 1']}
           />
           <YAxis
-            dataKey="calorie"
+            dataKey="calories"
             type="number"
             orientation="left"
-            yAxisId="calorie"
-            hidden="true"
+            yAxisId="calories"
+            hide={true}
           />
           <Tooltip content={<CustomTooltip />} />
           <Bar
-            dataKey="weight"
+            dataKey="kilogram"
             fill="#282D30"
             barSize={10}
             radius={[10, 10, 0, 0]}
           />
           <Bar
-            dataKey="calorie"
+            dataKey="calories"
             fill="#E60000"
             barSize={10}
             radius={[10, 10, 0, 0]}
-            yAxisId="calorie"
+            yAxisId="calories"
           />
         </BarChart>
       </ResponsiveContainer>
