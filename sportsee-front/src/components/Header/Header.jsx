@@ -34,6 +34,11 @@ const NavBar = styled.nav`
   }
 `;
 
+/**
+ * Header bar container for the dashboard
+ * @component
+ */
+
 function Header() {
   return (
     <nav>

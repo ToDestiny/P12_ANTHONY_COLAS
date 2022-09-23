@@ -89,6 +89,11 @@ const GraphP2 = styled.p`
   font-weight: 400;
 `;
 
+/**
+ * Right charts to show the user's key data (calories, proteines, glucides, lipides)
+ * @component
+ */
+
 function GraphRight() {
   let { id } = useParams;
   if (id === undefined) id = 12;

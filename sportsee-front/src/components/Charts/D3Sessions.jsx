@@ -35,6 +35,12 @@ const TooltipContainer = styled.p`
   background: white;
 `;
 
+/**
+ * Line chart that shows the user average sessions
+ * @param { Object } sessions
+ * @component
+ */
+
 function D3Sessions(sessions) {
   function CustomTooltip({ active, payload }) {
     if (active && payload && payload.length) {

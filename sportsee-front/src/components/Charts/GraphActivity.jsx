@@ -66,6 +66,11 @@ const Top = styled.div`
   flex-direction: row;
 `;
 
+/**
+ * Component to fetch data and id for the activity's chart
+ * @component
+ */
+
 function GraphActivity() {
   let { id } = useParams;
   if (id === undefined) id = 12;

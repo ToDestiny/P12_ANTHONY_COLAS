@@ -24,6 +24,12 @@ const TooltipContainer = styled.div`
   color: #ffffff;
 `;
 
+/**
+ * Bar chart that shows the user activity
+ * @param { Object } data
+ * @component
+ */
+
 function D3Activity(data) {
   function CustomTooltip({ active, payload }) {
     if (active && payload && payload.length) {

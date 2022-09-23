@@ -8,6 +8,11 @@ const Home = styled.div`
   overflow-x: hidden;
 `;
 
+/**
+ * Home Page coming from /user/:id from React Router
+ * @component
+ */
+
 function Dashboard() {
   return (
     <Home>

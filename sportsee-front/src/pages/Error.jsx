@@ -31,6 +31,11 @@ const ErrorText = styled.p`
   font-size: 50px;
 `;
 
+/**
+ * Error Page
+ * @component
+ */
+
 function Error() {
   return (
     <Home>

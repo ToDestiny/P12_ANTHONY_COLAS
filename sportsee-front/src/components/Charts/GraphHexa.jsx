@@ -18,6 +18,11 @@ const Container = styled.div`
   border-radius: 10px;
 `;
 
+/**
+ * Hexagram chart that shows the user performances
+ * @component
+ */
+
 function GraphHexa() {
   let { id } = useParams;
   if (id === undefined) id = 12;

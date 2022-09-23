@@ -18,6 +18,12 @@ const MainDashboardContainer = styled.div`
   flex-direction: column;
 `;
 
+/**
+ * Main Dashboard container
+ * Shows Error if an API error occurs
+ * @component
+ */
+
 function MainDashboard() {
   const [userInfo, setUserInfo] = useState([]);
   const [isDataLoading, setDataLoading] = useState(false);

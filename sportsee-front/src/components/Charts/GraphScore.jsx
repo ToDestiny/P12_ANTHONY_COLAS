@@ -13,6 +13,11 @@ const Container = styled.div`
   border-radius: 10px;
 `;
 
+/**
+ * Component to fetch data and id for the score's chart
+ * @component
+ */
+
 function GraphScore() {
   let { id } = useParams;
   if (id === undefined) id = 12;

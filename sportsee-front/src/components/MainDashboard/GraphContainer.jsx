@@ -32,6 +32,11 @@ const LeftBottom = styled.div`
   justify-content: space-between;
 `;
 
+/**
+ * Containers for all the mainboard charts
+ * @component
+ */
+
 function GraphsContainer() {
   return (
     <Container>

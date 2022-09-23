@@ -29,6 +29,12 @@ const TitleP = styled.p`
   color: ${colors.black};
 `;
 
+/**
+ * Title component for the dashboard showing the name of the user
+ * @param { String } userName
+ * @component
+ */
+
 function TitleDashboard({ userName }) {
   return (
     <nav>

@@ -48,6 +48,11 @@ const CopyrightText = styled.h3`
   font-size: 12px;
 `;
 
+/**
+ * Left bar container for the dashboard
+ * @component
+ */
+
 function LeftBar() {
   return (
     <nav>

@@ -11,6 +11,12 @@ const Container = styled.div`
   justify-content: center;
 `;
 
+/**
+ * Line chart that shows the user score
+ * @param { Number } todayScore
+ * @component
+ */
+
 function D3Score(todayScore) {
   const svgRef = useRef();
 

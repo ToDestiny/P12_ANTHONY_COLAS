@@ -12,6 +12,11 @@ const Container = styled.div`
   border-radius: 10px;
 `;
 
+/**
+ * Component to fetch data and id for Average Session's chart
+ * @component
+ */
+
 function GraphSession() {
   let { id } = useParams;
   if (id === undefined) id = 12;
