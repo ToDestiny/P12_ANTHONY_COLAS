@@ -24,7 +24,6 @@ function D3Score(todayScore) {
     { property: 'a', value: score * 100 },
     { property: 'b', value: 100 - score * 100 },
   ]);
-  console.log(data);
 
   useEffect(() => {
     //setting up svg container

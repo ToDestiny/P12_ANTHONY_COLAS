@@ -33,7 +33,14 @@ export async function fetchUserAverageSessions(id) {
     );
     if (response.status === 200) {
       let data = await response.json();
-      return data.data;
+      data.data.sessions[0].day = 'L';
+      data.data.sessions[1].day = 'M';
+      data.data.sessions[2].day = 'M';
+      data.data.sessions[3].day = 'J';
+      data.data.sessions[4].day = 'V';
+      data.data.sessions[5].day = 'S';
+      data.data.sessions[6].day = 'D';
+      return data.data.sessions;
     } else {
       throw new Error();
     }

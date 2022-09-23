@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import GraphActivity from './GraphActivity';
+import GraphActivity from '../Charts/GraphActivity';
 import GraphHexa from '../Charts/GraphHexa';
 import GraphRight from '../Charts/GraphRight';
 import GraphScore from '../Charts/GraphScore';
-import GraphSession from './GraphSessions';
+import GraphSession from '../Charts/GraphSessions';
 
 const Container = styled.div`
   height: 100%;

@@ -34,17 +34,7 @@ const TooltipContainer = styled.p`
   background: white;
 `;
 
-function D3Sessions() {
-  const data = [
-    { property: 'L', value: 30 },
-    { property: 'M', value: 23 },
-    { property: 'M', value: 45 },
-    { property: 'J', value: 50 },
-    { property: 'V', value: 0 },
-    { property: 'S', value: 0 },
-    { property: 'D', value: 60 },
-  ];
-
+function D3Sessions(sessions) {
   function CustomTooltip({ active, payload }) {
     if (active && payload && payload.length) {
       return (
@@ -55,7 +45,6 @@ function D3Sessions() {
     }
     return null;
   }
-
   return (
     <Container>
       <Title>
@@ -67,7 +56,7 @@ function D3Sessions() {
         <LineChart
           width={320}
           height={320}
-          data={data}
+          data={sessions.averageSessions}
           outerRadius="75%"
           margin={{ top: 0, right: 15, bottom: 15, left: 15 }}
           onMouseMove={(e) => {
@@ -82,7 +71,7 @@ function D3Sessions() {
           }}
         >
           <XAxis
-            dataKey="property"
+            dataKey="day"
             tickLine={false}
             axisLine={false}
             stroke="white"
@@ -94,7 +83,7 @@ function D3Sessions() {
           <YAxis domain={[0, 'dataMax + 50']} hide={true} />
           <Line
             type="basis"
-            dataKey="value"
+            dataKey="sessionLength"
             stroke="#FFFFFF"
             dot={false}
             strokeWidth={2}
