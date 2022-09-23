@@ -14,7 +14,7 @@ Anthony COLAS
 
 - [![React-v_18.2](https://img.shields.io/badge/React-v_18.2-blue)](https://fr.reactjs.org/)
 - [![React-Router-v_6.4](https://img.shields.io/badge/React_Router-v_6.4-blue)](https://reactrouter.com/docs/en/v6)
-- [![Styled-Components-v_5.3.5](https://img.shields.io/badge/Styled-Components-v_5.3.5-orange)](https://styled-components.com/)
+- [![Styled-Components-v_5.3.5](https://img.shields.io/badge/Styled_Components-v_5.3.5-orange)](https://styled-components.com/)
 - [![Recharts-v_2.1.14](https://img.shields.io/badge/Recharts-v_2.1.9-yellow)](https://recharts.org/)
 - [![D3-v_7.6.1](https://img.shields.io/badge/D3-v_7.6.1-yellow)](https://d3js.org/)
 
