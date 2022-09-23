@@ -69,7 +69,6 @@ const Top = styled.div`
 function GraphActivity() {
   let { id } = useParams;
   if (id === undefined) id = 12;
-  console.log(id);
   const [activity, setActivity] = useState([]);
 
   useEffect(() => {

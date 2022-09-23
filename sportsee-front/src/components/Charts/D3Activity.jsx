@@ -24,7 +24,6 @@ const TooltipContainer = styled.div`
 `;
 
 function D3Activity(data) {
-  console.log(data);
   function CustomTooltip({ active, payload }) {
     if (active && payload && payload.length) {
       return (
