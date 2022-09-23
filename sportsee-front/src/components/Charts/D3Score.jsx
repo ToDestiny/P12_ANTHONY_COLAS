@@ -10,12 +10,21 @@ const Container = styled.div`
   justify-content: center;
 `;
 
-function D3Score() {
-  const [data] = useState([
-    { property: 'a', value: 12 },
-    { property: 'b', value: 78 },
-  ]);
+function D3Score(todayScore) {
   const svgRef = useRef();
+
+  let score;
+  if (todayScore === undefined) {
+    score = todayScore.score;
+  } else {
+    score = todayScore.todayScore;
+  }
+
+  const [data] = useState([
+    { property: 'a', value: score * 100 },
+    { property: 'b', value: 100 - score * 100 },
+  ]);
+  console.log(data);
 
   useEffect(() => {
     //setting up svg container

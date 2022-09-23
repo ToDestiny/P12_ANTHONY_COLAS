@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import GraphActivity from './GraphActivity';
 import GraphHexa from '../Charts/GraphHexa';
 import GraphRight from '../Charts/GraphRight';
-import GraphScore from './GraphScore';
+import GraphScore from '../Charts/GraphScore';
 import GraphSession from './GraphSessions';
 
 const Container = styled.div`

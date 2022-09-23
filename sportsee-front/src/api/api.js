@@ -47,7 +47,7 @@ export async function fetchUserPerformance(id) {
     let response = await fetch(`http://localhost:3000/user/${id}/performance`);
     if (response.status === 200) {
       let data = await response.json();
-      data.data.data.reverse();
+      data?.data?.data.reverse();
       data.data.data[0].kind = 'Intensité';
       data.data.data[1].kind = 'Vitesse';
       data.data.data[2].kind = 'Force';
