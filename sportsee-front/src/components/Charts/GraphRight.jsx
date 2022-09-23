@@ -11,13 +11,13 @@ import GlucidesIcon from '../../assets/icons/glucides.svg';
 import LipidesIcon from '../../assets/icons/lipides.svg';
 
 const Container = styled.div`
-  height: 98%;
+  height: 95.3%;
   width: 20%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   font-weight: 500;
-  margin: 0 12em 0em 2em;
+  margin: 0 4em 0em 2em;
 `;
 
 const GraphCalories = styled.div`

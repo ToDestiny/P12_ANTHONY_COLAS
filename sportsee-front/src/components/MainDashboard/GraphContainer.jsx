@@ -7,7 +7,7 @@ import GraphScore from './GraphScore';
 import GraphSession from './GraphSessions';
 
 const Container = styled.div`
-  height: 50em;
+  height: 100%;
   width: 100%;
   font-weight: 500;
   margin: 4rem 0rem 0rem 4rem;
@@ -28,7 +28,7 @@ const LeftBottom = styled.div`
   display: flex;
   flex-direction: row;
   margin-top: 20px;
-  margin-bottom: 4em;
+  margin-bottom: 2rem;
   justify-content: space-between;
 `;
 

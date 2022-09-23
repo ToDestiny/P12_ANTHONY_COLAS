@@ -8,11 +8,12 @@ import { useParams } from 'react-router-dom';
 
 const MainDashboardContainer = styled.div`
   position: absolute;
-  height: 100vh;
-  width: 100%;
+  height: 100vh - 4rem;
+  width: 100vw - 4rem;
   top: 4em;
   left: 5rem;
-  bottom: 0;
+  right: 5rem;
+  bottom: 0rem;
   display: flex;
   flex-direction: column;
 `;
