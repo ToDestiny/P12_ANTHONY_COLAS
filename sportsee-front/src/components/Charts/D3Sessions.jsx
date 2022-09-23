@@ -7,6 +7,7 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Container = styled.div`
   position: relative;
@@ -100,4 +101,9 @@ function D3Sessions(sessions) {
     </Container>
   );
 }
+
+D3Sessions.propTypes = {
+  todayScore: PropTypes.object,
+};
+
 export default D3Sessions;

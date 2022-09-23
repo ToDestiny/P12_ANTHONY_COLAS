@@ -8,6 +8,7 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Container = styled.div`
   width: 100%;
@@ -80,5 +81,9 @@ function D3Activity(data) {
     </Container>
   );
 }
+
+D3Activity.propTypes = {
+  data: PropTypes.object,
+};
 
 export default D3Activity;

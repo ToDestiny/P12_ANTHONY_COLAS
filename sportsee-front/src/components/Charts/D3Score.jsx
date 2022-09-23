@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import * as d3 from 'd3';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Container = styled.div`
   height: 100%;
@@ -101,5 +102,9 @@ function D3Score(todayScore) {
     </Container>
   );
 }
+
+D3Score.propTypes = {
+  todayScore: PropTypes.number,
+};
 
 export default D3Score;

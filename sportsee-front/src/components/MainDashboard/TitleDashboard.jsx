@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import colors from '../../utils/style/colors';
+import PropTypes from 'prop-types';
 
 const TitleContainer = styled.div`
   height: 5em;
@@ -40,5 +41,9 @@ function TitleDashboard({ userName }) {
     </nav>
   );
 }
+
+TitleDashboard.propTypes = {
+  userName: PropTypes.string.isRequired,
+};
 
 export default TitleDashboard;

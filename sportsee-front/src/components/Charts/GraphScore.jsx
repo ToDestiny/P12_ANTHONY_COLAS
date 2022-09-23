@@ -13,7 +13,7 @@ const Container = styled.div`
   border-radius: 10px;
 `;
 
-function GraphScore({ todayScore }) {
+function GraphScore() {
   let { id } = useParams;
   if (id === undefined) id = 12;
   const [score, setScore] = useState([]);
