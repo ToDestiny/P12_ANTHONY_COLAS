@@ -1,4 +1,4 @@
-![picture](assets/logo/logo.svg)
+![picture](src/assets/logo/logo.svg)
 
 # Getting Started with Create React App
 
