@@ -18,7 +18,7 @@ const Container = styled.div`
  */
 
 function GraphSession() {
-  let { id } = useParams;
+  let { id } = useParams();
   if (id === undefined) id = 12;
   const [sessions, setSessions] = useState([]);
 

@@ -24,8 +24,9 @@ const Container = styled.div`
  */
 
 function GraphHexa() {
-  let { id } = useParams;
+  let { id } = useParams();
   if (id === undefined) id = 12;
+
   const [info, setInfo] = useState([]);
 
   useEffect(() => {

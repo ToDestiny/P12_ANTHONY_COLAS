@@ -29,7 +29,8 @@ function MainDashboard() {
   const [isDataLoading, setDataLoading] = useState(false);
 
   let error = false;
-  let { id } = useParams;
+  let { id } = useParams();
+
   if (id === undefined) id = 12;
 
   useEffect(() => {

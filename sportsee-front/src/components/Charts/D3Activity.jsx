@@ -68,7 +68,10 @@ function D3Activity(data) {
             yAxisId="calories"
             hide={true}
           />
-          <Tooltip content={<CustomTooltip />} />
+          <Tooltip
+            content={<CustomTooltip />}
+            wrapperStyle={{ outline: 'none' }}
+          />
           <Bar
             dataKey="kilogram"
             fill="#282D30"

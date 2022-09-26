@@ -95,7 +95,7 @@ const GraphP2 = styled.p`
  */
 
 function GraphRight() {
-  let { id } = useParams;
+  let { id } = useParams();
   if (id === undefined) id = 12;
   const [info, setInfo] = useState([]);
 

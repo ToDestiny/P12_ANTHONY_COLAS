@@ -33,6 +33,7 @@ const TooltipContainer = styled.p`
   font-size: 0.7rem;
   font-weight: 500;
   background: white;
+  border-style: none;
 `;
 
 /**
@@ -44,11 +45,7 @@ const TooltipContainer = styled.p`
 function D3Sessions(sessions) {
   function CustomTooltip({ active, payload }) {
     if (active && payload && payload.length) {
-      return (
-        <TooltipContainer>
-          <p> {`${payload[0].value} min`}</p>
-        </TooltipContainer>
-      );
+      return <TooltipContainer>{`${payload[0].value} min`}</TooltipContainer>;
     }
     return null;
   }
@@ -101,7 +98,10 @@ function D3Sessions(sessions) {
               r: 5,
             }}
           />
-          <Tooltip content={<CustomTooltip />} />
+          <Tooltip
+            content={<CustomTooltip />}
+            wrapperStyle={{ outline: 'none' }}
+          />
         </LineChart>
       </ResponsiveContainer>
     </Container>

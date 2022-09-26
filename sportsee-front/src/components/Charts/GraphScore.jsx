@@ -19,7 +19,7 @@ const Container = styled.div`
  */
 
 function GraphScore() {
-  let { id } = useParams;
+  let { id } = useParams();
   if (id === undefined) id = 12;
   const [score, setScore] = useState([]);
 
@@ -35,7 +35,7 @@ function GraphScore() {
 
   return (
     <Container>
-      <D3Score todayScore={score.todayScore} />
+      <D3Score todayScore={score.todayScore || score.score} />
     </Container>
   );
 }
