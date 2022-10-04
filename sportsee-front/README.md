@@ -26,6 +26,8 @@ Anthony COLAS
 
 ### Prerequisites
 
+App made for 1024/720px resolution.
+
 - npm
 - yarn
 - Node.js
@@ -48,7 +50,10 @@ Launch the backend on port 3000 (by default):
 Clone the frontend repository of SportSee
 `https://github.com/ToDestiny/SportSee---Analytics-Dashboard-with-React`
 
-Go inside the installed repository and install dependencies:
+Go inside the app repository
+`cd sportsee-front`
+
+Install dependencies:
 `npm install`
 
 Launch the backend on port 3000 (by default):
@@ -56,4 +61,4 @@ Launch the backend on port 3000 (by default):
 
 #### Accessing the website
 
-Frontend is now rendered at URL `http://localhost:3001`
+Frontend is now rendered at URL `http://localhost:3001/user/12`
