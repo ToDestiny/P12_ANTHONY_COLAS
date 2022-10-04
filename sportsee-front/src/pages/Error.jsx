@@ -9,8 +9,8 @@ const Home = styled.div`
 
 const ErrorContainer = styled.div`
   position: absolute;
-  height: 100vh;
-  width: 100%;
+  height: 100vh -4em;
+  width: 100vw -5em;
   top: 4em;
   left: 5rem;
   bottom: 0;

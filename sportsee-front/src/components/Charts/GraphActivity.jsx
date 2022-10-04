@@ -13,6 +13,7 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: space-between;
   border-radius: 10px;
+  margin-top: 3em;
   background-color: ${colors.background};
 `;
 

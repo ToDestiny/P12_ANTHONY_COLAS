@@ -11,13 +11,13 @@ import GlucidesIcon from '../../assets/icons/glucides.svg';
 import LipidesIcon from '../../assets/icons/lipides.svg';
 
 const Container = styled.div`
-  height: 95.3%;
+  height: 100% -3em;
   width: 20%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   font-weight: 500;
-  margin: 0 4em 0em 2em;
+  margin: 3em 0em 0em 2em;
 `;
 
 const GraphCalories = styled.div`
@@ -65,11 +65,9 @@ const GraphLipides = styled.div`
 `;
 
 const Icon = styled.img`
-  height: 4em;
-  width: 4em;
+  height: 3em;
+  width: 3em;
   margin: 10px;
-  margin-left: 50px;
-  margin-right: 30px;
 `;
 
 const GraphDiv = styled.div`
@@ -79,12 +77,12 @@ const GraphDiv = styled.div`
 
 const GraphP = styled.p`
   margin: 0;
-  font-size: 25px;
+  font-size: 14px;
 `;
 
 const GraphP2 = styled.p`
   margin: 0;
-  font-size: 14px;
+  font-size: 12px;
   margin-top: 10px;
   font-weight: 400;
 `;

@@ -4,9 +4,9 @@ import colors from '../../utils/style/colors';
 
 import Logo from '../../assets/logo/logo.svg';
 
-const NavContainer = styled.header`
+const HeaderContainer = styled.header`
   height: 4em;
-  width: 92%;
+  width: 100vw;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -21,14 +21,13 @@ const LogoImg = styled.img`
 `;
 
 const NavBar = styled.nav`
-  width: 780px;
+  width: 100vw;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   font-size: 8pt;
   font-weight: 500;
-  margin-right: 1em;
   h2 {
     color: ${colors.white};
     margin: 20px;
@@ -42,7 +41,7 @@ const NavBar = styled.nav`
 
 function Header() {
   return (
-    <NavContainer>
+    <HeaderContainer>
       <LogoImg src={Logo} alt="SportSee logo" />
       <NavBar>
         <h2>Accueil</h2>
@@ -50,7 +49,7 @@ function Header() {
         <h2>Réglage</h2>
         <h2>Communauté</h2>
       </NavBar>
-    </NavContainer>
+    </HeaderContainer>
   );
 }
 

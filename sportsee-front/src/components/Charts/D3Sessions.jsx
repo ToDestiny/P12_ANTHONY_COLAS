@@ -19,8 +19,8 @@ const Container = styled.div`
 
 const Title = styled.h2`
   position: absolute;
-  top: 1.5rem;
-  left: 2rem;
+  top: 1rem;
+  left: 1rem;
   margin: 0;
   color: rgba(255, 255, 255, 0.6);
   font-size: 1rem;

@@ -10,14 +10,13 @@ const Container = styled.div`
   height: 100%;
   width: 100%;
   font-weight: 500;
-  margin: 4rem 0rem 0rem 4rem;
   display: flex;
   flex-direction: row;
 `;
 
 const Left = styled.div`
   height: 100%;
-  width: 80%;
+  width: 75%;
   display: flex;
   flex-direction: column;
 `;
@@ -25,10 +24,9 @@ const Left = styled.div`
 const LeftBottom = styled.div`
   height: 40%;
   width: 100%;
+  margin-top: 2em;
   display: flex;
   flex-direction: row;
-  margin-top: 20px;
-  margin-bottom: 2rem;
   justify-content: space-between;
 `;
 

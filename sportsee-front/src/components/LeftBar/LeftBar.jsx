@@ -8,7 +8,7 @@ import BikingIcon from '../../assets/icons/icon3.svg';
 import LiftingIcon from '../../assets/icons/icon4.svg';
 
 const NavContainer = styled.header`
-  height: 95vh;
+  height: 100vh;
   width: 5em;
   margin-top: -4em;
   display: flex;
@@ -42,7 +42,6 @@ const Icon = styled.img`
 const CopyrightText = styled.h3`
   width: 100%;
   margin-left: 20px;
-  margin-bottom: 20px;
   writing-mode: vertical-rl;
   transform: rotate(-180deg);
   color: ${colors.white};

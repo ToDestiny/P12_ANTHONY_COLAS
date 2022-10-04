@@ -42,12 +42,12 @@ function GraphHexa() {
   return (
     <Container>
       <ResponsiveContainer width="100%" height="100%">
-        <RadarChart cx="50%" cy="50%" outerRadius="80%" data={info.data}>
+        <RadarChart cx="50%" cy="50%" outerRadius="60%" data={info.data}>
           <PolarGrid />
           <PolarAngleAxis
             dataKey="kind"
             stroke="#FFFFFF"
-            fontSize={14}
+            fontSize={12}
             tickLine={false}
           />
           <Radar

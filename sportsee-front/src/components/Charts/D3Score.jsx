@@ -34,8 +34,8 @@ function D3Score(todayScore) {
 
   useEffect(() => {
     //setting up svg container
-    const w = 190;
-    const h = 190;
+    const w = 100;
+    const h = 100;
     const radius = w / 2;
     const svg = d3
       .select(svgRef.current)
@@ -48,7 +48,7 @@ function D3Score(todayScore) {
     const formattedData = d3.pie().value((d) => d.value)(data);
     const arcGenerator = d3
       .arc()
-      .innerRadius(80)
+      .innerRadius(60)
       .outerRadius(radius)
       .cornerRadius(45);
     const color = d3.scaleOrdinal().range(['#FF0000', '#F7F7F7']);
@@ -65,16 +65,16 @@ function D3Score(todayScore) {
     // Title
     svg
       .append('text')
-      .style('font-size', '18px')
+      .style('font-size', '14px')
       .text('Score')
-      .attr('transform', 'translate(-120, -90)');
+      .attr('transform', 'translate(-60, -80)');
 
     //setting up circle
     svg
       .append('circle')
       .attr('cx', 0)
       .attr('cy', 0)
-      .attr('r', '80px')
+      .attr('r', '50px')
       .style('fill', 'white');
 
     //setting up annotation
