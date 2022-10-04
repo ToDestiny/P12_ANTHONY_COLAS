@@ -1,4 +1,17 @@
+import {
+  USER_MAIN_DATA,
+  USER_ACTIVITY,
+  USER_AVERAGE_SESSIONS,
+  USER_PERFORMANCE,
+} from '../data/mockData';
+
+const isMockedData = true;
+
 export async function fetchUserInfo(id) {
+  if (isMockedData) {
+    const data = USER_MAIN_DATA.find((user) => user.id === id);
+    return data;
+  }
   try {
     let response = await fetch(`http://localhost:3000/user/${id}`);
     if (response.status === 200) {
@@ -13,6 +26,20 @@ export async function fetchUserInfo(id) {
 }
 
 export async function fetchUserActivity(id) {
+  if (isMockedData) {
+    const data = USER_ACTIVITY.find((user) => user.userId === id);
+    let formattedDate = [];
+    let date;
+    data.sessions.forEach((session) => {
+      date = new Date(session.day);
+      formattedDate.push({
+        day: date.getDate(),
+        kilogram: session.kilogram,
+        calories: session.calories,
+      });
+    });
+    return formattedDate;
+  }
   try {
     let response = await fetch(`http://localhost:3000/user/${id}/activity`);
     if (response.status === 200) {
@@ -37,6 +64,18 @@ export async function fetchUserActivity(id) {
 }
 
 export async function fetchUserAverageSessions(id) {
+  if (isMockedData) {
+    const data = USER_AVERAGE_SESSIONS.find((user) => user.userId === id);
+    data.sessions[0].day = 'L';
+    data.sessions[1].day = 'M';
+    data.sessions[2].day = 'M';
+    data.sessions[3].day = 'J';
+    data.sessions[4].day = 'V';
+    data.sessions[5].day = 'S';
+    data.sessions[6].day = 'D';
+    console.log(data);
+    return data.sessions;
+  }
   try {
     let response = await fetch(
       `http://localhost:3000/user/${id}/average-sessions`

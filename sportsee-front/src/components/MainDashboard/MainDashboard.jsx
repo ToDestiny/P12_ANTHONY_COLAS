@@ -38,8 +38,8 @@ function MainDashboard() {
     setDataLoading(false);
   }, [id]);
 
-  async function fetchData(id) {
-    const userInfo = await fetchUserInfo(id);
+  async function fetchData(id, isMockedData) {
+    let userInfo = await fetchUserInfo(id, isMockedData);
     setUserInfo(userInfo);
   }
   if (userInfo?.id === undefined) error = true;
@@ -51,7 +51,13 @@ function MainDashboard() {
       <Error />
     ) : (
       <MainDashboardContainer>
-        <TitleDashboard userName={userInfo.userInfos?.firstName} />
+        <TitleDashboard
+          userName={
+            /*  isMockedData
+              ? data?.USER_MAIN_DATA[0]?.userInfos?.firstName
+              : */ userInfo.userInfos?.firstName
+          }
+        />
         <GraphsContainer />
       </MainDashboardContainer>
     );
