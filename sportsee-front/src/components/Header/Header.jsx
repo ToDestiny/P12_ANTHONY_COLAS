@@ -6,6 +6,7 @@ import Logo from '../../assets/logo/logo.svg';
 
 const NavContainer = styled.header`
   height: 4em;
+  width: 92%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -20,7 +21,7 @@ const LogoImg = styled.img`
 `;
 
 const NavBar = styled.nav`
-  width: 80%;
+  width: 780px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -41,17 +42,15 @@ const NavBar = styled.nav`
 
 function Header() {
   return (
-    <nav>
-      <NavContainer>
-        <LogoImg src={Logo} alt="SportSee logo" />
-        <NavBar>
-          <h2>Accueil</h2>
-          <h2>Profil</h2>
-          <h2>Réglage</h2>
-          <h2>Communauté</h2>
-        </NavBar>
-      </NavContainer>
-    </nav>
+    <NavContainer>
+      <LogoImg src={Logo} alt="SportSee logo" />
+      <NavBar>
+        <h2>Accueil</h2>
+        <h2>Profil</h2>
+        <h2>Réglage</h2>
+        <h2>Communauté</h2>
+      </NavBar>
+    </NavContainer>
   );
 }
 

@@ -4,7 +4,7 @@ import colors from '../../utils/style/colors';
 import PropTypes from 'prop-types';
 
 const TitleContainer = styled.div`
-  height: 5em;
+  height: 4em;
   width: 100%;
   font-weight: 500;
   margin: 1rem 0 1rem 4rem;

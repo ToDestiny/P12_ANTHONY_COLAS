@@ -8,8 +8,8 @@ import { useParams } from 'react-router-dom';
 
 const MainDashboardContainer = styled.div`
   position: absolute;
-  height: 100vh - 4rem;
-  width: 100vw - 4rem;
+  height: 1024px;
+  width: 780px;
   top: 4em;
   left: 5rem;
   right: 5rem;

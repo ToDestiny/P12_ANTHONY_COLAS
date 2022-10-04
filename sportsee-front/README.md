@@ -26,7 +26,7 @@ Anthony COLAS
 
 ### Prerequisites
 
-App made for 1024/720px resolution.
+App made for 1024x780px resolution.
 
 - npm
 - yarn
