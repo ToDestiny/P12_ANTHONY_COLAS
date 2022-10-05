@@ -62,3 +62,11 @@ Launch the backend on port 3000 (by default):
 #### Accessing the website
 
 Frontend is now rendered at URL `http://localhost:3001/user/12`
+
+#### Mocked Data or API
+
+In order to change between the two modes, you need to change the variable:
+`const isMockedData = false;`
+Located inside src/api/api/js l11
+
+By default is it false.

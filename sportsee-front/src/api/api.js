@@ -5,7 +5,7 @@ import {
   USER_PERFORMANCE,
 } from '../data/mockData';
 
-const isMockedData = true;
+const isMockedData = false;
 
 export async function fetchUserInfo(id) {
   if (isMockedData) {
@@ -99,6 +99,18 @@ export async function fetchUserAverageSessions(id) {
 }
 
 export async function fetchUserPerformance(id) {
+  if (isMockedData) {
+    const data = USER_PERFORMANCE.find((user) => user.userId === id);
+    data?.data.reverse();
+    data.data[0].kind = 'Intensité';
+    data.data[1].kind = 'Vitesse';
+    data.data[2].kind = 'Force';
+    data.data[3].kind = 'Endurance';
+    data.data[4].kind = 'Energie';
+    data.data[5].kind = 'Cardio';
+    console.log(data.data);
+    return data.data;
+  }
   try {
     let response = await fetch(`http://localhost:3000/user/${id}/performance`);
     if (response.status === 200) {
