@@ -61,7 +61,7 @@ Launch the backend on port 3000 (by default):
 
 #### Accessing the website
 
-Frontend is now rendered at URL `http://localhost:3001/user/12`
+Frontend is now rendered at URL `http://localhost:3000/user/12`
 
 #### Mocked Data or API
 
