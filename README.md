@@ -1,4 +1,4 @@
-![picture](src/assets/logo/logo.svg)
+![picture](logo.svg)
 
 # SportSee - Analytics Dashboard with React
 
