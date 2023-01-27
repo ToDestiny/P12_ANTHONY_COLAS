@@ -20,7 +20,7 @@ Anthony COLAS
 
 ## Preview
 
-![picture](src/assets/img/preview.png)
+![picture](sportsee-front/src/assets/img/preview.png)
 
 ## Installation
 
