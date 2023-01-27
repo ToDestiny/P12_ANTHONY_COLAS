@@ -20,7 +20,7 @@ Anthony COLAS
 
 ## Preview
 
-![picture](/preview.png)
+![picture](preview.png)
 
 ## Installation
 
